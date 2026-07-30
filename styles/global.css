@@ -8,3 +8,18 @@ button{
   cursor: pointer;
  
 }
+
+
+@media (max-width:650px) {
+
+header{
+  flex-direction: column;
+  gap:20px;
+}
+
+  .container_search{
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+}
