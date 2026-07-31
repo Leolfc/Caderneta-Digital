@@ -5,7 +5,6 @@ const section = document.querySelector(".container_value");
 const buttonSearch = document.querySelector(".search");
 const inputSearch = document.querySelector("#search_input");
 
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const div = document.createElement("div");
@@ -21,18 +20,27 @@ form.addEventListener("submit", (event) => {
   valorCliente.value = "";
 });
 
-buttonSearch.addEventListener("click",()=>{
-  
- const termoBusca = inputSearch.value.toLowerCase().trim();
- const clientes = document.querySelectorAll("h3")
- clientes.forEach((cliente)=>{
-  if(cliente.textContent.includes(termoBusca)){
-    cliente.parentElement.style.display = "flex"
-  }else{
+buttonSearch.addEventListener("click", () => {
+  const termoBusca = inputSearch.value.toLowerCase().trim();
+  const clientes = document.querySelectorAll("h3");
+  clientes.forEach((cliente) => {
+    if (cliente.textContent.includes(termoBusca)) {
+      cliente.parentElement.style.display = "flex";
+    } else {
+      cliente.parentElement.style.display = "none";
+    }
+  });
+});
+function clock() {
+  const data = new Date();
+  const hours = data.getHours();
+  const minutes = data.getMinutes();
+  const seconds = data.getSeconds();
 
-   cliente.parentElement.style.display = "none"
-    
-  }
- })
-  
-})
+  const div = document.querySelector(".clock");
+  div.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(() => {
+  clock();
+}, 1000);

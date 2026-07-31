@@ -1,17 +1,5 @@
 
-header{
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 20px;
-  background-color: orange;
-  border-radius: 10px;
-  margin: 20px 20px;
-  div{
-    display: flex;
-    gap:10px;
-    align-items: center;
-  }
-}
+
 
 .container_search{
   display: flex;
@@ -92,3 +80,4 @@ label{
   }
   
 }
+

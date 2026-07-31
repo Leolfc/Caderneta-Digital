@@ -1,0 +1,29 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  background-color: orange;
+  border-radius: 10px;
+  margin: 20px 20px;
+  position: relative;
+  .container_name_operador{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
+
+
+.clock{
+  display: flex;
+  font-family: "VT323", monospace;
+  position: absolute;
+  right:20px;
+  top:10px;
+  font-weight: bold;
+  font-size:18px;
+  
+  
+  
+}
