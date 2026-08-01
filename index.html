@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <title>Cardeneta</title>
     <link rel="stylesheet" href="styles/index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
-  
+
   <body>
     <header>
       <h1>Padaria Bom Pão</h1>
@@ -28,7 +34,6 @@
       </div>
     </header>
     <main>
-
       <section class="name_client">
         <form action="">
           <h2>Marcar Conta</h2>
@@ -47,7 +52,8 @@
             <label for="value"
               >Valor
               <input
-                type="number"
+                pattern="[0-9]+"
+                type="text"
                 id="value"
                 placeholder="Digite o valor do pedido"
               />
@@ -57,13 +63,17 @@
           <button>Adicionar</button>
         </form>
       </section>
-    
+
       <section class="container_value">
         <div class="container_search">
-        <input id="search_input" type="text" placeholder="Pesquisar cliente" />
-        <button class="search">Pesquisar</button>
-      </div>
-      <h2>Clientes Cadastrados</h2>
+          <input
+            id="search_input"
+            type="text"
+            placeholder="Pesquisar cliente"
+          />
+          <button class="search">Pesquisar</button>
+        </div>
+        <h2>Clientes Cadastrados</h2>
         <!-- <div class="container_dados_client">
             <h3>Leo</h3>
             <span>R$ 20,00</span>

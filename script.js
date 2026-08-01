@@ -5,6 +5,7 @@ const section = document.querySelector(".container_value");
 const buttonSearch = document.querySelector(".search");
 const inputSearch = document.querySelector("#search_input");
 const buttonEdit = document.querySelector(".edit");
+const regex = /^[0-9]+$/;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -17,11 +18,10 @@ form.addEventListener("submit", (event) => {
             <button class="edit">Editar</button>
         
   `;
+
   section.appendChild(div);
   inputNameClient.value = "";
   valorCliente.value = "";
-
-  
 });
 
 buttonSearch.addEventListener("click", () => {
@@ -40,14 +40,18 @@ function clock() {
   const hours = data.getHours();
   const minutes = data.getMinutes();
   const seconds = data.getSeconds();
+  const day = data.toLocaleString("pt-BR", {
+    dateStyle: "short",
+  });
 
-  const div = document.querySelector(".clock");
-  div.textContent = `${hours}:${minutes}:${seconds}`;
+  const divClock = document.querySelector(".clock");
+  divClock.textContent = `
+  ${day}
+  ${hours}:${minutes}:${seconds}`;
 }
 
 setInterval(() => {
   clock();
 }, 1000);
 
-
-console.log(buttonEdit)
+console.log(buttonEdit);
