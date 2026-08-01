@@ -1,29 +1,41 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-button{
+button {
   cursor: pointer;
- 
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
 }
 
+@media (max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-@media (max-width:650px) {
-
-header{
-  flex-direction: column;
-  gap:20px;
-}
-
-  .container_search{
+  .container_search {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 18px auto;
   }
-  .name_client{
-margin-top: 28%;
+  .name_client {
+    margin-top: 20%;
   }
-
-
+}
+.container_dados_client {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid gray;
+  max-width: 100%;
+  width: 300px;
+  border-radius: 8px;
+  padding-block: 10px;
 }

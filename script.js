@@ -4,6 +4,7 @@ const valorCliente = document.querySelector("#value");
 const section = document.querySelector(".container_value");
 const buttonSearch = document.querySelector(".search");
 const inputSearch = document.querySelector("#search_input");
+const buttonEdit = document.querySelector(".edit");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -13,11 +14,14 @@ form.addEventListener("submit", (event) => {
  
             <h3>${inputNameClient.value}</h3>
             <span>Valor a ser pago: R$ ${valorCliente.value}</span>
+            <button class="edit">Editar</button>
         
   `;
   section.appendChild(div);
   inputNameClient.value = "";
   valorCliente.value = "";
+
+  
 });
 
 buttonSearch.addEventListener("click", () => {
@@ -44,3 +48,6 @@ function clock() {
 setInterval(() => {
   clock();
 }, 1000);
+
+
+console.log(buttonEdit)
