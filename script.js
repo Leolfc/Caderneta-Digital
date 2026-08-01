@@ -5,7 +5,6 @@ const section = document.querySelector(".container_value");
 const buttonSearch = document.querySelector(".search");
 const inputSearch = document.querySelector("#search_input");
 const buttonEdit = document.querySelector(".edit");
-const regex = /^[0-9]+$/;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -18,6 +17,10 @@ form.addEventListener("submit", (event) => {
             <button class="edit">Editar</button>
         
   `;
+
+  if (inputNameClient.value === "" || valorCliente.value === "") {
+    return alert("Digite nome ou valor😉");
+  }
 
   section.appendChild(div);
   inputNameClient.value = "";
@@ -38,7 +41,7 @@ buttonSearch.addEventListener("click", () => {
 function clock() {
   const data = new Date();
   const hours = data.getHours();
-  const minutes = data.getMinutes();
+  const minutes = data.getMinutes()
   const seconds = data.getSeconds();
   const day = data.toLocaleString("pt-BR", {
     dateStyle: "short",

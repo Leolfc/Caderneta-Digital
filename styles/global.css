@@ -46,9 +46,10 @@ button {
   padding-block: 10px;
 }
 
-@media(prefers-color-scheme: white){
+@media(prefers-color-scheme: dark){
   body{
-    background-color: black;
-    color: rgb(250, 248, 248);
+    background-color: rgb(43, 37, 37);
+    color: rgb(255, 255, 255);
   }
 }
+
