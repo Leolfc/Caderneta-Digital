@@ -5,6 +5,7 @@ const section = document.querySelector(".container_value");
 const buttonSearch = document.querySelector(".search");
 const inputSearch = document.querySelector("#search_input");
 const buttonEdit = document.querySelector(".edit");
+const containerDadosClient = document.querySelector(".container_dados_client");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -17,6 +18,7 @@ form.addEventListener("submit", (event) => {
             <button class="edit">Editar</button>
         
   `;
+  containerDadosClient.style.display = "none";
 
   if (inputNameClient.value === "" || valorCliente.value === "") {
     return alert("Digite nome ou valor😉");
@@ -28,11 +30,12 @@ form.addEventListener("submit", (event) => {
 });
 
 buttonSearch.addEventListener("click", () => {
-  const termoBusca = inputSearch.value.toLowerCase().trim();
+  const termoBusca = inputSearch.value.toLowerCase();
   const clientes = document.querySelectorAll("h3");
   clientes.forEach((cliente) => {
     if (cliente.textContent.includes(termoBusca)) {
       cliente.parentElement.style.display = "flex";
+      containerDadosClient.style.display = "none";
     } else {
       cliente.parentElement.style.display = "none";
     }
@@ -41,7 +44,7 @@ buttonSearch.addEventListener("click", () => {
 function clock() {
   const data = new Date();
   const hours = data.getHours();
-  const minutes = data.getMinutes()
+  const minutes = data.getMinutes();
   const seconds = data.getSeconds();
   const day = data.toLocaleString("pt-BR", {
     dateStyle: "short",
@@ -57,4 +60,6 @@ setInterval(() => {
   clock();
 }, 1000);
 
-console.log(buttonEdit);
+buttonEdit.addEventListener("click", (event) => {
+  alert("Você clicou no botão Editar!");
+});
