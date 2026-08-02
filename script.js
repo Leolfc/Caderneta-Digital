@@ -14,8 +14,7 @@ form.addEventListener("submit", (event) => {
   const numberFormat = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
-   
-  }).format(Number(valorCliente.value.replace(",", ".")))
+  }).format(Number(valorCliente.value.replace(",", ".")));
 
   div.innerHTML = `
  
@@ -51,7 +50,7 @@ function clock() {
   const data = new Date();
   const hours = data.getHours();
   const minutes = data.getMinutes();
-  const seconds = data.getSeconds();
+  const seconds = String(data.getSeconds()).padStart(2, "0");
   const day = data.toLocaleString("pt-BR", {
     dateStyle: "short",
   });
