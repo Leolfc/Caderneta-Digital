@@ -14,7 +14,12 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = `
  
             <h3>${inputNameClient.value}</h3>
-            <span>Valor a ser pago: R$ ${valorCliente.value}</span>
+            <span>Valor a ser pago: R$ ${Number(
+              valorCliente.value,
+            ).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}</span>
             <button class="edit">Editar</button>
         
   `;
