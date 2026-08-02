@@ -11,15 +11,16 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const div = document.createElement("div");
   div.classList.add("container_dados_client");
+  const numberFormat = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  }).format(valorCliente.value);
+
   div.innerHTML = `
  
             <h3>${inputNameClient.value}</h3>
-            <span>Valor a ser pago: R$ ${Number(
-              valorCliente.value,
-            ).toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}</span>
+            <span>Valor a ser pago: ${numberFormat}</span>
             <button class="edit">Editar</button>
         
   `;
