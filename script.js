@@ -7,22 +7,35 @@ const inputSearch = document.querySelector("#search_input");
 const buttonEdit = document.querySelector(".edit");
 const containerDadosClient = document.querySelector(".container_dados_client");
 
+valorCliente.oninput = () => {
+  let value = valorCliente.value.replace(/\D/g, "");
+  value = Number(value) / 100;
+  valorCliente.value = formatCurrency(value);
+};
+
+function formatCurrency(value) {
+  value = value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
+  return value;
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const div = document.createElement("div");
+
   div.classList.add("container_dados_client");
-  const numberFormat = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(Number(valorCliente.value.replace(",", ".")));
 
   div.innerHTML = `
  
             <h3>${inputNameClient.value}</h3>
-            <span>Valor a ser pago: ${numberFormat}</span>
+            <span>Valor a ser pago: ${valorCliente.value}</span>
             <button class="edit">Editar</button>
         
   `;
+
   containerDadosClient.style.display = "none";
 
   if (inputNameClient.value === "" || valorCliente.value === "") {
