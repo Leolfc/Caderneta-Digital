@@ -7,6 +7,10 @@ const inputSearch = document.querySelector("#search_input");
 const buttonEdit = document.querySelector(".edit");
 const containerDadosClient = document.querySelector(".container_dados_client");
 
+inputNameClient.oninput = () => {
+  inputNameClient.value = inputNameClient.value.replace(/[^a-zA-ZÀ-ú\s]/g, "");
+};
+
 valorCliente.oninput = () => {
   let value = valorCliente.value.replace(/\D/g, "");
   value = Number(value) / 100;
@@ -24,6 +28,7 @@ function formatCurrency(value) {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
   const div = document.createElement("div");
 
   div.classList.add("container_dados_client");
@@ -79,5 +84,5 @@ setInterval(() => {
 }, 1000);
 
 buttonEdit.addEventListener("click", (event) => {
-  alert("Você clicou no botão Editar!");
+  const inputEditName = document.createElement("input");
 });
