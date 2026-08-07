@@ -66,8 +66,8 @@ buttonSearch.addEventListener("click", () => {
 });
 function clock() {
   const data = new Date();
-  const hours = data.getHours();
-  const minutes = data.getMinutes();
+  const hours = String(data.getHours()).padStart(2, "0");
+  const minutes = String(data.getMinutes()).padStart(2, "0");
   const seconds = String(data.getSeconds()).padStart(2, "0");
   const day = data.toLocaleString("pt-BR", {
     dateStyle: "short",
